@@ -4,5 +4,8 @@ icon: fas fa-info
 order: 4
 ---
 
+Hey, my name is Malusi Mwongeli and I'm a cybersecurity researcher and published writer. 
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+I'm mainly focused on red teaming and I am particularly interested in offensive infrastructure. This blog is mostly a place for me to dump stuff I find in my infosec adventures.
+
+I hope it's helpful to you!
