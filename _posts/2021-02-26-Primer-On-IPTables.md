@@ -100,7 +100,8 @@ sudo tail -n 0 -f /var/log/syslog
 ```
 
 In the end you should have something like this:
-![[packet-traversal.png]](/assets/img/packet-traversal.png)
+![packet-traversal.png](/assets/img/packet-traversal.png)
+_Packet Traversal_
 
 Using the flowchart, try and figure out what's going on. Remember that a ping consists of an echo-request and an echo-reply. 
 
