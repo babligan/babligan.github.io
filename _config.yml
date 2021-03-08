@@ -17,10 +17,10 @@ timezone: Moscow/Europe
 # --------------------------
 title: Babligan                          # the main title
 
-tagline: Yet another pentestign blog.   # it will display as the sub-title
+tagline: Writer. Infosec enthusiast. Interested in Offensive Infrastructure.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
- Yet another pentestign blog.
+ Yet another pentesting blog.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://babligan.github.io'
