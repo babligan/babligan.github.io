@@ -3,7 +3,7 @@ layout: post
 title: A Comprehensive Primer on IPTables
 subtitle: Why does it look so complicated?
 author: babligan
-date: 2021-20-02 14:10:00 +0300
+date: 2021-02-20 14:10:00 +0300
 cover-img: /assets/img/iptables.png
 categories: [Infra]
 tags: [iptables, netfilter, firewall]
