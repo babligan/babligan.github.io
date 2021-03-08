@@ -17,7 +17,7 @@ IPTables are really versatile. They are able to:
 - Filter through IPv4 and IPv6 packets
 - Both network and port translation (NAT/NAPT)
 - Implement transparent proxies with NAT which becomes especially useful for port redirection.
-- Packet manipulation (mangling) by altering the Type of Service, DSCP fileds or the ECN flag.
+- Packet manipulation (mangling) by altering the Type of Service, DSCP fields or the ECN flag.
 
 ## Basic Structure
 
@@ -41,7 +41,7 @@ IPTables are based on the netfilter modules i.e
 
 
 ### Chains
-Each of the 5 tables has it's own predefined chains. Tables are deifned by general purpose, while chains determine when rules will be evaluates. Just like tables, chains mirror the names of the netfilter hoos they are associated with. These chain titles help describe the origin in the Netfilter stack. There are 5 chains.
+Each of the 5 tables has its own predefined chains. Tables are defined by general purpose, while chains determine when rules will be evaluated. Just like tables, chains mirror the names of the netfilter hooks they are associated with. These chain titles help describe the origin in the Netfilter stack. There are 5 chains.
 - the PREROUTING chain is triggered by the `NF_IP_PRE_ROUTING` hook immediately upon packet reception.
 - the INPUT chain is triggered by the `NF_IP_LOCAL_IN` hook once the packet is moved to a local process.
 - the FORWARD chain is triggered by the `NF_IP_FORWARD` hook once the packet forwarded through another interface.
@@ -65,7 +65,7 @@ Now that the `raw` table has 3 chains, how does a packet traverse that table int
 - Incoming packets destined to another host: **PREROUTING -> FORWARD -> POSTROUTING**
 - Locally generated packets: **OUTPUT -> POSTROUTING**
 
-Understanding how packets move through the IPtable will be especially imprtant when we look at how Docker and Kubernetes interact with IPTables. 
+Understanding how packets move through the IPtable will be especially important when we look at how Docker and Kubernetes interact with IPTables. 
 
 This is a very high level breakdown of how a packet would traverse the IPTable if all the tables and chains were present. For an indepth graphical analysis, I'd recommend one on [Wikipedia](https://en.wikipedia.org/wiki/Netfilter#/media/File:Netfilter-packet-flow.svg).
 
@@ -101,7 +101,6 @@ sudo tail -n 0 -f /var/log/syslog
 
 In the end you should have something like this:
 ![packet-traversal.png](/assets/img/packet-traversal.png)
-_Packet Traversal_
 
 Using the flowchart, try and figure out what's going on. Remember that a ping consists of an echo-request and an echo-reply. 
 
@@ -115,7 +114,7 @@ sudo ./flush-iptables.sh
 ```
 
 ### Rules
-Chains are a series of rules that define how the packets are handled. Rules are defines as a set of matches and a target. Rules are followed by order until a match is found. If a match is found it goes to the rules specified in the TARGET or executes the special values mentioned in the rule. If the criteria is not matched, it moves on to the next rule all through the chain. 
+Chains are a series of rules that define how the packets are handled. Rules are defined as a set of matches and a target. Rules are followed by order until a match is found. If a match is found it goes to the rules specified in the TARGET or executes the special values mentioned in the rule. If the criteria is not matched, it moves on to the next rule all through the chain. 
 
 #### Matches
 A match is the criteria or condition that has to be met before a packet is handled. The conditions can be defined by the source of the packet, the destination of the packet, the protocol used by the packet and even the interface via which a packet is received or through which it is to be sent out. 
@@ -131,7 +130,7 @@ Targets are basically chains that determine what happens once a packet matches a
 
 There are several targets available:
 - ACCEPT - accepts the packet for processing.
-- DROP - packet is dropped
+- DROP - packet is dropped.
 - RETURN - causes the packet to stop moving through the chain.
 - REJECT - acts just like DROP but sends a response back to the sender.
 - DNAT - only present in the PREROUTING and UOTPUT chains in the NAT table.
@@ -185,7 +184,7 @@ To clear the iptables, use the -F switch. If no chain is specified, then all cha
 ```md
 iptables -F
 ```
-By default, the rulls added to the iptables are ephemeral, which meeans that everytime you reboot, your rules are gone. We need to install the nefilter-package to save our rules and make them persistent even after reboots.
+By default, the rules added to the iptables are ephemeral, which means that everytime you reboot, your rules are gone. We need to install the netfilter-package to save our rules and make them persistent even after reboots.
 ```md
 sudo apt-get update
 sudo apt install netfilter-persistent -y
