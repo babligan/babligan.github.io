@@ -1,4 +1,5 @@
 ---
+layout: post
 title: SMTP Relaying for Phishing
 author: Babligan
 date: 2021-03-31 11:34:00 +0300
