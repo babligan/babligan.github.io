@@ -21,11 +21,11 @@ Usually, a mail server requires the following to be 'functional':
 	
 Robust phishing infrastructure usually incooporates a phishing originator either running Gophish or PhishingFrenzy and a separate mail server and implementing the use of a SMTP relay that sits in front of the phishing originator. However, some organizations have hardened spam filters that can be incredibly difficult to get around. Even after implementing all the requirements, while they can help, they ultimately may not be enough. 
 
-![[phishing-infra.png]]
+![[phishing-infra.png]](/assets/img/phishing-infra.png)
 
 The primary focus of this blog is on the SMTP relay. In essence, an SMTP relay is  server that 'relays' your email from your own mail server and queues it up for delivery to its final destination. The relay uses the domain name in the email address and DNS to figure out where the email should be sent. 
 
-![[smtp-relaying.png]]
+![[smtp-relaying.png]](/assets/img/smtp-relaying.png)
 
 You can configure your own SMTP relay or use a third party relay such as Sendmail, SMTP2GO, Sendgrid, Mailjet or Mailgun. 
 
@@ -37,7 +37,7 @@ A standalone SMTP relay is completely under our control and acts as a redirector
 2. SSH into your VPS and configure your IPTables/firewall rules to allow inbound and outbound SMTP traffic. 
 3. Configure the correct DNS settings. Basically, just have 2 A records, the first one has a host entry of `@` and the other one is `mail` and both have the SMTP relay's IP address. Although this is optional, you can chooose to have another A record, which has the host entry of `www` and has the IP address of your phishing server.
 
-![[dns-record.png]]
+![[dns-record.png]](/assets/img/dns-record.png)
 
 Don't forget the PTR record which is set separately according to your VPS providers instructions. 
 
@@ -49,9 +49,9 @@ After that's setup, we'll start with installing and configuring postfix. (I'll u
  
 When the dialog pops us, select *Internet Site* then enter the domain name assigned to this VPS. Let's say our VPS's domain name is abc.com, then the system mail name is abc.com
 
-![[postfix1.png]]
+![[postfix1.png]](/assets/img/postfix1.png)
 
-![[postfix2.png]]
+![[postfix2.png]](/assets/img/postfix2.png)
 
 Then we'll make it act as a redirector by appending this line at the end of Postfix's configuration file which is usually at */etc/postfix/main.cf*.
  ```shell
@@ -78,7 +78,7 @@ There is wide range of third party SMTP relays such as SendMail, SMTP2Go, Sendgr
 
 Once you've setup your account on Mailjet, we have a few things to do in order to fully set up our SMTP relay to relay through Mailjet. These options are under the Quick Setup on your dashboard.
 
-![[quicksetup.png]]
+![[quicksetup.png]](/assets/img/quicksetup.png)
 - Setup SMTP 
 - Manage sender addresses/domains
 - Setup domain authentication
@@ -88,19 +88,19 @@ We'll setup our domains before we get into setting up SMTP for relaying.
 
 Under the **Sender domains & Addresses** page, you'll click on **Add Domain**. A new page will load which allows you to add the domain whose traffic you want to relay. In my case it will be *abc.com*. Ensure that you have complete control over your domain name registrar and in my case it's Namecheap.
 
-![[adddomain.png]]
+![[adddomain.png]](/assets/img/adddomain.png)
 
 Press Continue. The next page requires you to validate your domain. There are 2 options available. If you do choose to host a temporary file ensure it is on the home folder of any user, including root. I prefer the DNS method as it's easy and resolves really quick. 
 
-![[validatedomain.png]]
+![[validatedomain.png]](/assets/img/validatedomain.png)
 
 On Namecheap, under Advanced DNS on your domain, create a new TXT record, and assign the values of Host and Value as indicated then set TTL to 5 minutes then save. It should look like this:
 
-![[nc1.png]]
+![[nc1.png]](/assets/img/nc1.png)
 
 Click **Check Now** and once the record has successfully resolves, you'll get a success message. 
 
-![[success.png]]
+![[success.png]](/assets/img/success.png)
 
 #### 2. Setup Domain Authentication
 
@@ -111,23 +111,23 @@ There are two main points to know about the SPF records:
 - SPF record is a TXT record; not be confused with the SPF type. (Although the SPF type could be used, it is not recommended in the industry.)
 - There is only one SPF record per domain. If you have more than one SPF DNS record, ISPs will not know which one to use which may cause authentication issues.
 
-![[spf.png]]
+![[spf.png]](/assets/img/spf.png)
 
 **Setting up the DKIM record**
 To setup DKIM authentication, you will be creating a new DKIM record. (Unlike SPF records, there are no issues with having multiple DKIM DNS records in your domain.)
 
-![[dkim.png]]
+![[dkim.png]](/assets/img/dkim.png)
 
 Finally, your records should look like this:
 
-![[final.png]]
+![[final.png]](/assets/img/final.png)
 
 Ensure that you confirm the status of your DKIM and SPF records after you've set them up. 
 
 #### 3. Setting Up SMTP
 Mailjet issues you with the SMTP server address and SMTP credential which is a set of an API-Key and a password. 
 
-![[api.png]]
+![[api.png]](/assets/img/api.png)
 
 Back on our SMTP relay server, we'll edit the Postfix configuration file to set the value of relayhost and setup security and authentication support for SMTP through the use of SASL. 
 
@@ -184,7 +184,7 @@ sudo chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
 
 At this point, Postfix will send emails via Mailjet directly to inbox on both Gmail and Outlook. Additionally, when you look at the mail headers they'll reveal that the mail originates from mailjet. 
 
-![[inbox.png]]
+![[inbox.png]](/assets/img/inbox.png)
 
 ##### Additional Resources
 https://www.socketlabs.com/blog/smtp-relay/
