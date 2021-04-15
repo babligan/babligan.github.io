@@ -107,14 +107,14 @@ Click **Check Now** and once the record has successfully resolves, you'll get a 
 
 Next, we have to authenticate our domain by setting up SPF and DKIM keys. By default, SPF status and DKIM status are both in error. Click manage button and follow the instructions to add SPF and DKIM records.
 
-**Setting Up the SPF Record**
+##### Setting Up the SPF Record
 There are two main points to know about the SPF records:
 - SPF record is a TXT record; not be confused with the SPF type. (Although the SPF type could be used, it is not recommended in the industry.)
 - There is only one SPF record per domain. If you have more than one SPF DNS record, ISPs will not know which one to use which may cause authentication issues.
 
 ![[spf.png]](/assets/img/spf.png)
 
-**Setting up the DKIM record**
+##### Setting up the DKIM record
 To setup DKIM authentication, you will be creating a new DKIM record. (Unlike SPF records, there are no issues with having multiple DKIM DNS records in your domain.)
 
 ![[dkim.png]](/assets/img/dkim.png)
@@ -187,8 +187,8 @@ At this point, Postfix will send emails via Mailjet directly to inbox on both Gm
 
 ![[inbox.png]](/assets/img/inbox.png)
 
-##### Additional Resources
-https://www.socketlabs.com/blog/smtp-relay/
-https://www.ired.team/offensive-security/red-team-infrastructure/smtp
-https://godlikesecurity.com/index.php/2017/12/14/building-resilient-phishing-campaigns/
-https://www.linuxbabe.com/mail-server/postfix-smtp-relay
+#### Additional Resources
+- [https://www.socketlabs.com/blog/smtp-relay/](https://www.socketlabs.com/blog/smtp-relay/)
+- [https://www.ired.team/offensive-security/red-team-infrastructure/smtp](https://www.ired.team/offensive-security/red-team-infrastructure/smtp)
+- [https://godlikesecurity.com/index.php/2017/12/14/building-resilient-phishing-campaigns/](https://godlikesecurity.com/index.php/2017/12/14/building-resilient-phishing-campaigns/)
+- [https://www.linuxbabe.com/mail-server/postfix-smtp-relay](https://www.linuxbabe.com/mail-server/postfix-smtp-relay)
