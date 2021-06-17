@@ -78,14 +78,23 @@ Launch gophish using the link and accept the certificate warning. Login using th
 To complete our campaign, we need to setup a few things:
 
 1. **Users & Groups** which is the list of users you want to phish, including emails, names, and titles. Add one email that you have control over.
+
 ![[users.png]](/assets/img/gophish/users.png)
+
 2. An **email template** which is the actual email we want to send, in HTML, text or both. We'll get to this a little later.
+
 ![[template.png]](/assets/img/gophish/template.png)
+
 3. The **Landing page** which is the page that our targets are sent to and interact with, if they click the link. In our case, this is the link we'll generate with evilginx.
+
 ![[landing.png]](/assets/img/gophish/landing.png)
+
 4. The **Sending Profile** which is the actual email server (SendGrid, in our scenario), and the settings which allow our phish to be sent. We'll get to this in the next step.
+
 ![[sending.png]](/assets/img/gophish/sending.png)
+
 5. After all that is setup, we can finally schedule and launch our **Campaign**.
+
 ![[campaign.png]](/assets/img/gophish/campaign.png)
 
 #### 2. Setting Up SendGrid as our SMTP Server
