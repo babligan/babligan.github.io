@@ -148,7 +148,7 @@ Now that we've verified that everything works, let's tie it all together. The ca
 
 ![[sessions2.png]](/assets/img/gophish/sessions2.png)
 
-#### 4. Create and Deploy our Phish
+### 4. Create and Deploy our Phish
 
 Back to Gophish's email template and now we can craft the email we want to send our target. I'll use a simple template from [crigg626 Github repo](https://github.com/criggs626/PhishingTemplates). I'll use the [Webmail Upgrade](https://github.com/criggs626/PhishingTemplates/blob/master/emails/Upgrade%20Webmail.html) template but feel free to use whichever one.
 ![[final-template.png]](/assets/img/gophish/final-template.png)
