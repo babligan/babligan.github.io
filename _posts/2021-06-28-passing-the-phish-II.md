@@ -187,4 +187,3 @@ I hope you've learnt one or two things from this article. Be sure to check out t
 - <https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/>
 - <https://breakdev.org/evilginx-advanced-phishing-with-two-factor-authentication-bypass/>
 - <https://github.com/kgretzky/evilginx2>
-- 
