@@ -2,7 +2,7 @@
 title: Passing the Phish II
 subtitle: Integrating Gophish & Evilginx for Session Hijacking and Bypassing 2FA Authentication
 author: Babligan
-date: 2019-08-11 00:34:00 +0800
+date: 2021-06-28 00:34:00 +0800
 categories: [Infra]
 tags: [smtp, phishing, postfix]
 ---
