@@ -15,7 +15,7 @@ At this point, we've should have covered the following according to the previous
 
 In this post we'll cover the remaining bits. 
 
-#### 3. Installing and Running evilginx
+### 3. Installing and Running evilginx
 
 We'll install evilginx on our second server. The official usage and installation of evilginx are available on the tool's official [Github project page](https://github.com/kgretzky/evilginx2). Before installing evilginx, we have to install Go of at least version 1.14.0.
 
