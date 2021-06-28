@@ -142,5 +142,5 @@ When we check our email:
 
 ![[sent.png]](/assets/img/gophish/sent.png)
 
-#### 3. Installing and Running evilginx2
+Now that our phishing server works as expected, in the next post, we'll integrate it with evilginx in rder to capture credententials. 
 
