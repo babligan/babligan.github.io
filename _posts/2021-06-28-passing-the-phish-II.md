@@ -7,7 +7,17 @@ categories: [Infrastructure]
 tags: [gophish, evilginx, phishing]
 ---
 
-At this point, we've should have setup Gophish correctly according to the previous [post](https://babligan.github.io/posts/passing-the-phish/). Next, we'll install evilginx on our second server. The official usage and installation of evilginx are available on the tool's official [Github project page](https://github.com/kgretzky/evilginx2). Before installing evilginx, we have to install Go of at least version 1.14.0.
+At this point, we've should have covered the following according to the previous [post](https://babligan.github.io/posts/passing-the-phish/). 
+- [x] Installation of Gophish
+- [x] Setup SendGrid as our SMTP server
+- [ ] Installation of Evilginx and setting up a lure
+- [ ] Integrating Gophish and evilginx
+
+In this post we'll cover the remaining bits. 
+
+#### 3. Installing and Running evilginx
+
+We'll install evilginx on our second server. The official usage and installation of evilginx are available on the tool's official [Github project page](https://github.com/kgretzky/evilginx2). Before installing evilginx, we have to install Go of at least version 1.14.0.
 
 To do so, follow these steps:
 
