@@ -16,6 +16,8 @@ Even though Gophish has a fully functional capability to collect credentials, it
 
 ![[how_evilginx_works.png]](/assets/img/gophish/how-evilginx-works.png)
 
+_Image from breakdev.org_
+
 We'll integrate the ease of phishing with Gophish and the man-in-the-middle functionality of evilginx to create a robust phishing campaign that is able to collect session cookies/tokens and login credentials from applications that have 2FA enabled.
 
 ### Prerequisites
@@ -142,5 +144,5 @@ When we check our email:
 
 ![[sent.png]](/assets/img/gophish/sent.png)
 
-Now that our phishing server works as expected, in the next post, we'll integrate it with evilginx in rder to capture credententials. 
+Now that our phishing server works as expected, in the next post, we'll integrate it with evilginx in order to capture credentials. 
 
