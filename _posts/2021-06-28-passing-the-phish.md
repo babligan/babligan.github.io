@@ -2,9 +2,9 @@
 title: Passing the Phish
 subtitle: Integrating Gophish & Evilginx for Session Hijacking and Bypassing 2FA Authentication
 author: Babligan
-date: 2019-08-11 00:34:00 +0800
-categories: [Infra]
-tags: [smtp, phishing, postfix]
+date: 2021-06-26 00:34:00 +0800
+categories: [Infrastructure]
+tags: [gophish, evilginx, phishing]
 ---
 At the core of it, phishing involves tricking a user into doing something they shouldn't do. Also, not all phishing techniques involve tricking a user into clicking a malicious link on an email, entering their credentials on a phishing site or downloading a malicious file.
 
