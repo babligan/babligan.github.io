@@ -3,15 +3,11 @@ title: Passing the Phish II
 subtitle: Integrating Gophish & Evilginx for Session Hijacking and Bypassing 2FA Authentication
 author: Babligan
 date: 2021-06-28 00:34:00 +0800
-categories: [Infra]
-tags: [smtp, phishing, postfix]
+categories: [Infrastructure]
+tags: [gophish, evilginx, phishing]
 ---
 
-#### 3. Installing and Running evilginx2
-
-Now that we've setup Gophish, next we'll setup evilginx which will capturee the credentials from our targets.
-
-We will install evilginx on the second server. The official usage and installation of evilginx are available on the tool's official [Github project page](https://github.com/kgretzky/evilginx2). Before installing evilginx, we have to install Go of at least version 1.14.0.
+At this point, we've should have setup Gophish correctly according to the previous [post](https://babligan.github.io/posts/passing-the-phish/). Next, we'll install evilginx on our second server. The official usage and installation of evilginx are available on the tool's official [Github project page](https://github.com/kgretzky/evilginx2). Before installing evilginx, we have to install Go of at least version 1.14.0.
 
 To do so, follow these steps:
 
@@ -176,7 +172,9 @@ When we click the link it opens a new tab, which is the outlook login page we ha
 1. For this type of attack, the primary defense would always be exercising a little bit of paranoia. **Always check the legitimacy of the domain that's visible on the address bar.**
 2. However, this wouldn't be enough for big companies as it just requires one  user to submit their correct credetials and just like that attackers are able to steal large amounts of data. This is where U2F for unphishable 2nd factor authentication comes in. It uses a physical hardware that you plug into a USB port and you just press a button when the website asks you to. The U2F protocol is designed to take the website's domain as one of the key components in negotiating the handshake. This means that if the domain in the browser's address bar, does not match the domain used in the data transmission between the website and the U2F device, the communication will simply fail. This solution leaves no room for error and is totally unphishable using Evilginx method.
 
-I hope you've learnt one or two things from this article. Be sure to check out these resources. If you have any questions, or if there'somethng I might have missed out, feel free to DM me on [Twitter](https://twitter.com/babligan).
+I hope you've learnt one or two things from this article. Be sure to check out these resources. Special thanks to [Gabriel](https://twitter.com/_thevivi) for reviewing this ~~long ass~~ post. If you have any questions, or if there's something I might have missed out, feel free to DM me on [Twitter](https://twitter.com/babligan). 
 
 - <https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/>
-- <https://babligan.github.io/posts/smtp-relaying-for-phishing/>
+- <https://breakdev.org/evilginx-advanced-phishing-with-two-factor-authentication-bypass/>
+- <https://github.com/kgretzky/evilginx2>
+- 
